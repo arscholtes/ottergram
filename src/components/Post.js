@@ -1,11 +1,14 @@
-import Barry from "../otters/otter1.jpg";
+function Post({ image, name }) {
 
-function Post() {
+    const handleClick = (otterName) => {
+        return console.log('You clicked ' + otterName)
+    }
+
     return (
         <li className='post-component'>
-            <button>
-                <img src={Barry} alt='Barry'/>
-                <p>Barry</p>
+            <button onClick={() => handleClick(name)}>
+                <img src={image} alt={name}/>
+                <p className="post-name">{name}</p>
             </button>
         </li>
     )
