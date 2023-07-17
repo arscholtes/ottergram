@@ -1,12 +1,12 @@
-function Post({ image, name }) {
-
-    const handleClick = (otterName) => {
-        return console.log('You clicked ' + otterName)
-    }
+function Post({ image, name, setSelectedPostName }) {
 
     return (
         <li className='post-component'>
-            <button onClick={() => handleClick(name)}>
+            <button
+                onClick={() => setSelectedPostName(name)}
+                onMouseEnter={() => console.log( 'Hello ' + name )}
+                onMouseLeave={() => console.log( 'Goodbye ' + name )}
+            >
                 <img src={image} alt={name}/>
                 <p className="post-name">{name}</p>
             </button>
